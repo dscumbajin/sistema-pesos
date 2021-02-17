@@ -65,28 +65,28 @@
 						<div class="form-group">
 	                        <label for="grupo" class="col-sm-3 control-label">Grupo</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="grupo" name="grupo" placeholder="25" >
+	                            <input type="text" class="form-control" id="grupo" name="grupo" required placeholder="25" >
 	                        </div>
 	                    </div>
 
 						<div class="form-group">
 	                        <label for="subgrupo" class="col-sm-3 control-label">Subgrupo</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="subgrupo" name="subgrupo" placeholder="4" >
+	                            <input type="text" class="form-control" id="subgrupo" name="subgrupo" required placeholder="4" >
 	                        </div>
 	                    </div>
 
 						<div class="form-group">
 	                        <label for="tolerancia" class="col-sm-3 control-label">Tolerancia</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="tolerancia" name="tolerancia" placeholder="30.00" >
+	                            <input type="text" class="form-control" id="tolerancia" name="tolerancia" required placeholder="30.00" >
 	                        </div>
 	                    </div>
 
 						<div class="form-group">
 	                        <label for="tiempo" class="col-sm-3 control-label">Tiempo</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="tiempo" name="tiempo" placeholder="10000">
+	                            <input type="text" class="form-control" id="tiempo" name="tiempo" required placeholder="10000">
 	                        </div>
 	                    </div>
 
