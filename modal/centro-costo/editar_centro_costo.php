@@ -13,62 +13,36 @@
 						<form class="form-horizontal" method="post" id="editar_usuario" name="editar_usuario">
 							<div id="resultados_ajax2"></div>
 
-							<input type="hidden" name="mod_id" id="mod_id">
-							
 							<div class="form-group">
 								<label for="mod_usuario" class="col-sm-3 control-label">Usuario</label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="mod_usuario" name="mod_usuario" required>
-
+									<input type="hidden" name="mod_id" id="mod_id">
 								</div>
 							</div>
-
+						
 							<div class="form-group">
-								<label for="mod_password" class="col-sm-3 control-label">Password</label>
+								<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="mod_password" name="mod_password" required>
+									<input type="text" class="form-control" id="mod_nombre" name="mod_nombre" required>
+								
 								</div>
 							</div>
-
+						
 							<div class="form-group">
-								<label for="mod_id_centro_costo" class="col-sm-3 control-label">Centro de costo</label>
+								<label for="mod_email" class="col-sm-3 control-label">Email</label>
 								<div class="col-sm-8">
-									<select class="form-control" id="mod_id_centro_costo" name="mod_id_centro_costo" required>
-										<?php
-										try {
-											$sql = " SELECT * FROM centrocostos";
-
-											$resultado = $con->query($sql);
-											while ($centro_costo = $resultado->fetch_assoc()) { ?>
-												<option value="<?php echo $centro_costo['id_centroCosto']; ?>">
-													<?php echo $centro_costo['centroCosto'] . " - " . $centro_costo['subcentro_costo']; ?></option>
-										<?php }
-										} catch (Exception $e) {
-											echo "Error: " . $e->getMessage();
-										}
-										?>
-									</select>
+									<input type="email" class="form-control" id="mod_email" name="mod_email">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="mod_perfil" class="col-sm-3 control-label">Administrador</label>
+								<label for="mod_perfil" class="col-sm-3 control-label">Perfil</label>
 								<div class="col-sm-8">
 									<select class="form-control" id="mod_perfil" name="mod_perfil" required>
-										<option value="">-- Selecciona perfil --</option>
-										<option value="0" selected>No</option>
-										<option value="1">Si</option>
-									</select>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="mod_estado" class="col-sm-3 control-label">Activo</label>
-								<div class="col-sm-8">
-									<select class="form-control" id="mod_estado" name="mod_estado" required>
 										<option value="">-- Selecciona estado --</option>
-										<option value="1" selected>Si</option>
-										<option value="0">No</option>
+										<option value="1" selected>User</option>
+										<option value="2">Administrador</option>
 									</select>
 								</div>
 							</div>

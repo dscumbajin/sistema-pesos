@@ -5,30 +5,37 @@ if (empty($_POST['mod_id'])) {
 	$errors[] = "ID vacío";
 } else if (empty($_POST['mod_usuario'])) {
 	$errors[] = "Usuario vacío";
-} else if (empty($_POST['mod_nombre'])) {
-	$errors[] = "Nombre vacío";
-}  else if ($_POST['mod_perfil'] == "") {
+} else if (empty($_POST['mod_password'])) {
+	$errors[] = "Password vacío";
+} else if (empty($_POST['mod_id_centro_costo'])) {
+	$errors[] = "Centro de costo vacío";
+} else if ($_POST['mod_perfil'] == "") {
 	$errors[] = "Selecciona el perfil del Usuario";
+} else if ($_POST['mod_estado'] == "") {
+	$errors[] = "Selecciona el estado del Usuario";
 } else if (
 	!empty($_POST['mod_id']) &&
 	!empty($_POST['mod_usuario']) &&
-	!empty($_POST['mod_nombre']) &&
-	$_POST['mod_perfil'] != ""
+	!empty($_POST['mod_password']) &&
+	!empty($_POST['mod_id_centro_costo'])
 ) {
 	/* Connect To Database*/
 	require_once("../../config/db.php"); //Contiene las variables de configuracion para conectar a la base de datos
 	require_once("../../config/conexion.php"); //Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-	$usuario = mysqli_real_escape_string($con, (strip_tags($_POST["mod_usuario"], ENT_QUOTES)));
-	$nombre = mysqli_real_escape_string($con, (strip_tags($_POST["mod_nombre"], ENT_QUOTES)));
-	$email = mysqli_real_escape_string($con, (strip_tags($_POST["mod_email"], ENT_QUOTES)));
-	$perfil = intval($_POST['mod_perfil']);
 
 	$id_usuario = intval($_POST['mod_id']);
-	$sql = "UPDATE admins SET usuario='" . $usuario . "', nombreUsu='" . $nombre . "', mail='" . $email . "', idPerfil='" . $perfil . "' WHERE idUsu='" . $id_usuario . "'";
+	$usuario = mysqli_real_escape_string($con, (strip_tags($_POST["mod_usuario"], ENT_QUOTES)));
+	$password = mysqli_real_escape_string($con, (strip_tags($_POST["mod_password"], ENT_QUOTES)));
+	$id_centro_costo = intval($_POST["mod_id_centro_costo"]);
+	$perfil = intval($_POST['mod_perfil']);
+	$estado = intval($_POST['mod_estado']);
+
+	$sql = "UPDATE usuarios SET usuario='" . $usuario . "', id_centroCosto='" . $id_centro_costo . "', password='" . $password . "', admin='" . $perfil . "', activo='" . $estado . "'
+	WHERE id_usuario='" . $id_usuario . "'";
 	$query_update = mysqli_query($con, $sql);
 	if ($query_update) {
-		$messages[] = "Usuario ha sido actualizado satisfactoriamente.";
+		$messages[] = "Usuario actualizado satisfactoriamente.";
 	} else {
 		$errors[] = "Lo siento algo ha salido mal intenta nuevamente." . mysqli_error($con);
 	}

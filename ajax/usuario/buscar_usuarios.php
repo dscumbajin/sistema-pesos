@@ -70,7 +70,7 @@ if ($action == 'ajax') {
 					<th>Centro de costos</th>
 					<th>Subcentro</th>
 					<th>Admin</th>
-					<th>Estado</th>
+					<th>Activo</th>
 					<th>Acciones</th>
 
 				</tr>
@@ -90,19 +90,19 @@ if ($action == 'ajax') {
 						$perfil = "SI";
 					}
 					$estado_usuario = $row['activo'];
-					if ($estado_usuario == 1) {
-						$estado = "Activo";
+					if ($estado_usuario == 0) {
+						$estado = "NO";
 					} else {
-						$estado = "Inactivo";
+						$estado = "SI";
 					}
-				
+
 				?>
 
 					<input type="hidden" value="<?php echo $usuario_usuario; ?>" id="usuario_usuario<?php echo $id_usuario; ?>">
-					<input type="hidden" value="<?php echo $id_centro_costo_usuario; ?>" id="id_centro$id_centro_costo_usuario<?php echo $id_usuario; ?>">
+					<input type="hidden" value="<?php echo $id_centro_costo_usuario; ?>" id="id_centro_costo_usuario<?php echo $id_usuario; ?>">
 					<input type="hidden" value="<?php echo $password_usuario; ?>" id="password_usuario<?php echo $id_usuario; ?>">
-					<input type="hidden" value="<?php echo $perfil_usuario; ?>" id="perfil_$perfil_usuario<?php echo $id_usuario; ?>">
-					<input type="hidden" value="<?php echo $estado_usuario; ?>" id="estado$estado_usuario<?php echo $id_usuario; ?>">
+					<input type="hidden" value="<?php echo $perfil_usuario; ?>" id="perfil_usuario<?php echo $id_usuario; ?>">
+					<input type="hidden" value="<?php echo $estado_usuario; ?>" id="estado_usuario<?php echo $id_usuario; ?>">
 
 					<tr>
 						<td><?php echo $usuario_usuario; ?></td>

@@ -79,16 +79,14 @@
 
 		function obtener_datos(id) {
 		    var usuario_usuario = $("#usuario_usuario" + id).val();
-		    var id_centro_costo_usuario = $("#id_centro_costo_usuario" + id).val();
-		    var password_usuario = $("#password_usuario" + id).val();
+		    var nombre_usuario = $("#nombre_usuario" + id).val();
+		    var email_usuario = $("#email_usuario" + id).val();
 		    var perfil_usuario = $("#perfil_usuario" + id).val();
-		    var estado_usuario = $("#estado_usuario" + id).val();
 
 		    $("#mod_usuario").val(usuario_usuario);
-		    $("#mod_id_centro_costo").val(id_centro_costo_usuario);
-		    $("#mod_password").val(password_usuario);
+		    $("#mod_nombre").val(nombre_usuario);
+		    $("#mod_email").val(email_usuario);
 		    $("#mod_perfil").val(perfil_usuario);
-		    $("#mod_estado").val(estado_usuario);
 		    $("#mod_id").val(id);
 
 		}

@@ -28,8 +28,7 @@
 							<li><a href="usuarios.php"><span class="activarnav usuarios activarbarra" id="usuarios">Usuarios</span> <span class="sr-only" style="display:none">(current)</span></a></li>
 						<?php } ?>
 						<li><a href="productos.php"><span class=" nuevo activarbarra " id="productos">Productos</span> </a></li>
-
-
+						<li><a href="centro_costo.php"><span class=" nuevo activarbarra " id="centro_costo">Centro Costo</span> </a></li>
 						<li class="desaparecer"><a class="linea"><span>|</span></a></li>
 						<li><a href="#"><?php echo $_SESSION['user_usuario']; ?> <i style="margin-left:5px;" class="glyphicon glyphicon-user"></i></a></li>
 						<li><a href="login.php?logout"><i style="color: red;" class='glyphicon glyphicon-log-out'></i> Salir</a></li>
