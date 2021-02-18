@@ -78,15 +78,27 @@
 		})
 
 		function obtener_datos(id) {
-		    var producto_producto = $("#producto_producto" + id).val();
+		    var codigo_producto = $("#codigo_producto" + id).val();
 		    var nombre_producto = $("#nombre_producto" + id).val();
-		    var email_producto = $("#email_producto" + id).val();
-		    var perfil_producto = $("#perfil_producto" + id).val();
+		    var estimado_producto = $("#estimado_producto" + id).val();
+		    var minimo_producto = $("#minimo_producto" + id).val();
+		    var maximo_producto = $("#maximo_producto" + id).val();
+		    var estado_producto = $("#estado_producto" + id).val();
+		    var grupo_producto = $("#grupo_producto" + id).val();
+		    var subgrupo_producto = $("#subgrupo_producto" + id).val();
+		    var tolerancia_producto = $("#tolerancia_producto" + id).val();
+		    var tiempo_producto = $("#tiempo_producto" + id).val();
 
-		    $("#mod_producto").val(producto_producto);
+		    $("#mod_codigo").val(codigo_producto);
 		    $("#mod_nombre").val(nombre_producto);
-		    $("#mod_email").val(email_producto);
-		    $("#mod_perfil").val(perfil_producto);
+		    $("#mod_estimado").val(estimado_producto);
+		    $("#mod_minimo").val(minimo_producto);
+		    $("#mod_maximo").val(maximo_producto);
+		    $("#mod_estado").val(estado_producto);
+		    $("#mod_grupo").val(grupo_producto);
+		    $("#mod_subgrupo").val(subgrupo_producto);
+		    $("#mod_tolerancia").val(tolerancia_producto);
+		    $("#mod_tiempo").val(tiempo_producto);
 		    $("#mod_id").val(id);
 
 		}
