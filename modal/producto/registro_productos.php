@@ -18,14 +18,14 @@
 	                     <div class="form-group">
 	                        <label for="codigo" class="col-sm-3 control-label">Código</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="codigo" name="codigo" required>
+	                            <input type="text" class="form-control" id="codigo" name="codigo" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
 	                        </div>
 	                    </div>
 
 	                    <div class="form-group">
 	                        <label for="producto" class="col-sm-3 control-label">Producto</label>
 	                        <div class="col-sm-8">
-	                            <input type="text" class="form-control" id="producto" name="producto" required>
+	                            <input type="text" class="form-control" id="producto" name="producto" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
 	                        </div>
 	                    </div>
 

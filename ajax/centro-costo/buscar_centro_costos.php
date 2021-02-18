@@ -7,9 +7,9 @@ require_once("../../config/conexion.php"); //Contiene funcion que conecta a la b
 
 $action = (isset($_REQUEST['action']) && $_REQUEST['action'] != NULL) ? $_REQUEST['action'] : '';
 if (isset($_GET['id'])) {
-	$id_producto = $_GET['id'];
+	$id_centroCosto = $_GET['id'];
 
-	if ($delete1 = mysqli_query($con, "DELETE FROM productos WHERE id_producto='" . $id_producto . "'")) {
+	if ($delete1 = mysqli_query($con, "DELETE FROM centrocostos WHERE id_centroCosto='" . $id_centroCosto . "'")) {
 ?>
 		<div class="alert alert-success alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -29,9 +29,10 @@ if (isset($_GET['id'])) {
 
 if ($action == 'ajax') {
 	// escaping, additionally removing everything that could be (html/javascript-) code
+	// idUsu, usuario, nombreUsu, password, mail, idPerfil
 	$q = mysqli_real_escape_string($con, (strip_tags($_REQUEST['q'], ENT_QUOTES)));
-	$aColumns = array('codigo_producto', 'producto'); //Columnas de busqueda
-	$sTable = "productos";
+	$aColumns = array('centroCosto'); //Columnas de busqueda
+	$sTable = "centrocostos";
 	$sWhere = "";
 	if ($_GET['q'] != "") {
 		$sWhere = "WHERE (";
@@ -41,7 +42,7 @@ if ($action == 'ajax') {
 		$sWhere = substr_replace($sWhere, "", -3);
 		$sWhere .= ')';
 	}
-	$sWhere .= " order by id_producto DESC";
+	$sWhere .= " order by id_centroCosto DESC";
 	include '../pagination.php'; //include pagination file
 	//pagination variables
 	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page'])) ? $_REQUEST['page'] : 1;
@@ -53,7 +54,7 @@ if ($action == 'ajax') {
 	$row = mysqli_fetch_array($count_query);
 	$numrows = $row['numrows'];
 	$total_pages = ceil($numrows / $per_page);
-	$reload = '../../productos.php';
+	$reload = '../../usuarios.php';
 	//main query to fetch the data
 	$sql = "SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 	$query = mysqli_query($con, $sql);
@@ -65,66 +66,55 @@ if ($action == 'ajax') {
 			<table id="registrosTable" class="table ">
 				<tr class="info">
 
-					<th>Código</th>
-					<th>Producto</th>
-					<th>Peso estimado</th>
-					<th>Peso mínimo</th>
-					<th>Peso máximo</th>
+					<th>Centro costo</th>
+					<th>Subcentro costo</th>
+					<th>Etiqueta ingreso</th>
+					<th>Secuencial ingreso</th>
+					<th>Etiqueta egreso</th>
+					<th>Secuencial egreso</th>
 					<th>Activo</th>
-					<th>Grupo</th>
-					<th>Subgrupo</th>
-					<th>Tolerancia</th>
-					<th>Tiempo</th>
 					<th>Acciones</th>
 
 				</tr>
 				<?php
 				while ($row = mysqli_fetch_array($query)) {
-					// idUsu, usuario, nombreUsu, password, mail, idPerfil
-					$id_producto = $row['id_producto'];
-					$codigo_producto = $row['codigo_producto'];
-					$nombre_producto = $row['producto'];
-					$estimado_producto = $row['peso_estimado'];
-					$minimo_producto = $row['peso_minimo'];
-					$maximo_producto = $row['peso_maximo'];
-					$estado_producto = $row['activo'];
-					if ($estado_producto == 1) {
-						$estado = "Si";
+
+					$id_centroCosto = $row['id_centroCosto'];
+					$centroCosto = $row['centroCosto'];
+					$subcentro_costo = $row['subcentro_costo'];
+					$etiqueta_ingreso = $row['etiqueta_ingreso'];
+					$secuencial_ingreso = $row['secuencial_ingreso'];
+					$etiqueta_egreso = $row['etiqueta_egreso'];
+					$secuencial_egreso = $row['secuencial_egreso'];
+					$activo = $row['activo'];
+					if ($activo == 0) {
+						$activo_cc = "NO";
 					} else {
-						$estado = "No";
+						$activo_cc = "SI";
 					}
-					$grupo_producto = $row['grupo'];
-					$subgrupo_producto = $row['subgrupo'];
-					$tolerancia_producto = $row['tolerancia'];
-					$tiempo_producto = $row['tiempo'];
+
 				?>
 
-					<input type="hidden" value="<?php echo $codigo_producto; ?>" id="codigo_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $nombre_producto; ?>" id="nombre_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $estimado_producto; ?>" id="estimado_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $minimo_producto; ?>" id="minimo_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $maximo_producto; ?>" id="maximo_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $estado_producto; ?>" id="estado_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $grupo_producto; ?>" id="grupo_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $subgrupo_producto; ?>" id="subgrupo_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $tolerancia_producto; ?>" id="tolerancia_producto<?php echo $id_producto; ?>">
-					<input type="hidden" value="<?php echo $tiempo_producto; ?>" id="tiempo_producto<?php echo $id_producto; ?>">
-				
+					<input type="hidden" value="<?php echo $centroCosto; ?>" id="centroCosto<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $subcentro_costo; ?>" id="subcentro_costo<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $etiqueta_ingreso; ?>" id="etiqueta_ingreso<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $secuencial_ingreso; ?>" id="secuencial_ingreso<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $etiqueta_egreso; ?>" id="etiqueta_egreso<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $secuencial_egreso; ?>" id="secuencial_egreso<?php echo $id_centroCosto; ?>">
+					<input type="hidden" value="<?php echo $activo; ?>" id="activo<?php echo $id_centroCosto; ?>">
+
 					<tr>
-						<td><?php echo $codigo_producto; ?></td>
-						<td><?php echo $nombre_producto; ?></td>
-						<td><?php echo $estimado_producto; ?></td>
-						<td><?php echo $minimo_producto; ?></td>
-						<td><?php echo $maximo_producto; ?></td>
-						<td><?php echo $estado; ?></td>
-						<td><?php echo $grupo_producto; ?></td>
-						<td><?php echo $subgrupo_producto; ?></td>
-						<td><?php echo $tolerancia_producto; ?></td>
-						<td><?php echo $tiempo_producto; ?></td>
+						<td><?php echo $centroCosto; ?></td>
+						<td><?php echo $subcentro_costo; ?></td>
+						<td><?php echo $etiqueta_ingreso; ?></td>
+						<td><?php echo $secuencial_ingreso; ?></td>
+						<td><?php echo $etiqueta_egreso; ?></td>
+						<td><?php echo $secuencial_egreso; ?></td>
+						<td><?php echo $activo_cc; ?></td>
 						<td><span>
-								<a href="#" title='Editar producto' onclick="obtener_datos('<?php echo $id_producto; ?>');" data-toggle="modal" data-target="#modProducto"><i class="glyphicon glyphicon-edit"></i></a>
+								<a href="#" title='Editar Centro Costo' onclick="obtener_datos('<?php echo $id_centroCosto; ?>');" data-toggle="modal" data-target="#modCentroCosto"><i class="glyphicon glyphicon-edit"></i></a>
 								<?php if ($_SESSION['user_admin'] == '1') { ?>
-								<a href="#" title='Borrar producto' onclick="eliminar('<?php echo $id_producto; ?>')"><i class="glyphicon glyphicon-trash" style="color: red;"></i> </a>
+									<a href="#" title='Borrar Centro Costo' onclick="eliminar('<?php echo $id_centroCosto; ?>')"><i class="glyphicon glyphicon-trash" style="color: red;"></i> </a>
 								<?php } ?>
 							</span>
 						</td>
@@ -148,7 +138,7 @@ if ($action == 'ajax') {
 		if ($_GET['q'] != "") {
 		?>
 			<div class="alert alert-danger text-center" role="alert">
-				No existen productos filtrados con el dato: <?php echo $_GET['q']; ?>
+				No existen Centro de Costo filtrados con el dato: <?php echo $_GET['q']; ?>
 			</div>
 <?php
 		}

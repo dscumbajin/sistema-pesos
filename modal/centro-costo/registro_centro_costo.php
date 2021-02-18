@@ -7,55 +7,51 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar usuario</h4>
+						<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar Centro de Costo</h4>
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal" method="post" id="guardar_centro_costo" name="guardar_centro_costo">
 							<div id="resultados_ajax"></div>
 
-							<!-- <div class="form-group">
-								<label for="usuario" class="col-sm-3 control-label">Usuario</label>
+							<div class="form-group">
+								<label for="centroCosto" class="col-sm-3 control-label">Centro de Costo</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="usuario" name="usuario" required>
+									<input type="text" class="form-control" id="centroCosto" name="centroCosto" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="password" class="col-sm-3 control-label">Password</label>
+								<label for="subcentro" class="col-sm-3 control-label">Subcentro</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="password" name="password" required>
+									<input type="number" min="0" class="form-control" id="subcentro" name="subcentro" required>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="etiqueta_ingreso" class="col-sm-3 control-label">Etiqueta Ingreso</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="etiqueta_ingreso" name="etiqueta_ingreso" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="centroCosto" class="col-sm-3 control-label">Centro de costo</label>
+								<label for="secuencial_ingreso" class="col-sm-3 control-label">Secuencial Ingreso</label>
 								<div class="col-sm-8">
-									<select class="form-control" id="centroCosto" name="centroCosto" required>
-										<?php
-										try {
-											$sql = " SELECT * FROM centrocostos";
-
-											$resultado = $con->query($sql);
-											while ($centro_costo = $resultado->fetch_assoc()) { ?>
-												<option value="<?php echo $centro_costo['id_centroCosto']; ?>">
-													<?php echo $centro_costo['centroCosto'] . " - " . $centro_costo['subcentro_costo']; ?></option>
-										<?php }
-										} catch (Exception $e) {
-											echo "Error: " . $e->getMessage();
-										}
-										?>
-									</select>
+									<input type="number" class="form-control" id="secuencial_ingreso" name="secuencial_ingreso" required>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="admin" class="col-sm-3 control-label">Administrador</label>
+								<label for="etiqueta_egreso" class="col-sm-3 control-label">Etiqueta Egreso</label>
 								<div class="col-sm-8">
-									<select class="form-control" id="admin" name="admin" required>
-										<option value="">-- Selecciona perfil --</option>
-										<option value="0" selected>No</option>
-										<option value="1" >Si</option>			
-									</select>
+									<input type="text" class="form-control" id="etiqueta_egreso" name="etiqueta_egreso" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="secuencial_egreso" class="col-sm-3 control-label">Secuencial Egreso</label>
+								<div class="col-sm-8">
+									<input type="number" class="form-control" id="secuencial_egreso" name="secuencial_egreso" required>
 								</div>
 							</div>
 
@@ -68,7 +64,7 @@
 										<option value="0">No</option>
 									</select>
 								</div>
-							</div> -->
+							</div> 
 
 					</div>
 					<div class="modal-footer">

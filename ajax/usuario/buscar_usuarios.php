@@ -56,7 +56,8 @@ if ($action == 'ajax') {
 	$total_pages = ceil($numrows / $per_page);
 	$reload = '../../usuarios.php';
 	//main query to fetch the data
-	$sql = "SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
+	$sql = "SELECT id_usuario, usuario, centrocostos.id_centroCosto, centroCosto, subcentro_costo, password, admin, usuarios.activo
+	FROM  $sTable $sWhere LIMIT $offset,$per_page";
 	$query = mysqli_query($con, $sql);
 	//loop through fetched data
 	if ($numrows > 0) {

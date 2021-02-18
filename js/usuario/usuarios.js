@@ -89,8 +89,6 @@
 		    $("#mod_password").val(password_usuario);
 		    $("#mod_perfil").val(perfil_usuario);
 		    $("#mod_estado").val(estado_usuario);
-		    console.log(perfil_usuario);
-		    console.log(estado_usuario);
 		    $("#mod_id").val(id);
 
 		}

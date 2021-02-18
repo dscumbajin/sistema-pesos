@@ -6,7 +6,7 @@
 		    var q = $("#q").val();
 		    $("#loader").fadeIn('slow');
 		    $.ajax({
-		        url: './ajax/usuario/buscar_usuarios.php?action=ajax&page=' + page + '&q=' + q,
+		        url: './ajax/centro-costo/buscar_centro_costos.php?action=ajax&page=' + page + '&q=' + q,
 		        beforeSend: function(objeto) {
 		            $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
 		        },
@@ -20,10 +20,10 @@
 
 		function eliminar(id) {
 		    var q = $("#q").val();
-		    if (confirm("Realmente deseas eliminar el usuario")) {
+		    if (confirm("Realmente deseas eliminar el centro de costo")) {
 		        $.ajax({
 		            type: "GET",
-		            url: "./ajax/usuario/buscar_usuarios.php",
+		            url: "./ajax/centro-costo/buscar_centro_costos.php",
 		            data: "id=" + id,
 		            "q": q,
 		            beforeSend: function(objeto) {
@@ -37,13 +37,13 @@
 		    }
 		}
 
-		$("#guardar_usuario").submit(function(event) {
+		$("#guardar_centro_costo").submit(function(event) {
 		    $('#guardar_datos').attr("disabled", true);
 
 		    var parametros = $(this).serialize();
 		    $.ajax({
 		        type: "POST",
-		        url: "ajax/usuario/nuevo_usuario.php",
+		        url: "ajax/centro-costo/nuevo_centro_costo.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
 		            $("#resultados_ajax").html("Mensaje: Cargando...");
@@ -57,13 +57,13 @@
 		    event.preventDefault();
 		})
 
-		$("#editar_usuario").submit(function(event) {
+		$("#editar_centro_costo").submit(function(event) {
 		    $('#actualizar_datos').attr("disabled", true);
 
 		    var parametros = $(this).serialize();
 		    $.ajax({
 		        type: "POST",
-		        url: "ajax/usuario/editar_usuario.php",
+		        url: "ajax/centro-costo/editar_centro_costo.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
 		            $("#resultados_ajax2").html("Mensaje: Cargando...");
@@ -78,15 +78,20 @@
 		})
 
 		function obtener_datos(id) {
-		    var usuario_usuario = $("#usuario_usuario" + id).val();
-		    var nombre_usuario = $("#nombre_usuario" + id).val();
-		    var email_usuario = $("#email_usuario" + id).val();
-		    var perfil_usuario = $("#perfil_usuario" + id).val();
-
-		    $("#mod_usuario").val(usuario_usuario);
-		    $("#mod_nombre").val(nombre_usuario);
-		    $("#mod_email").val(email_usuario);
-		    $("#mod_perfil").val(perfil_usuario);
+		    var centroCosto = $("#centroCosto" + id).val();
+		    var subcentro_costo = $("#subcentro_costo" + id).val();
+		    var etiqueta_ingreso = $("#etiqueta_ingreso" + id).val();
+		    var secuencial_ingreso = $("#secuencial_ingreso" + id).val();
+		    var etiqueta_egreso = $("#etiqueta_egreso" + id).val();
+		    var secuencial_egreso = $("#secuencial_egreso" + id).val();
+		    var activo = $("#activo" + id).val();
+		    $("#mod_activo").val(activo);
+		    $("#mod_secuencial_egreso").val(secuencial_egreso);
+		    $("#mod_etiqueta_egreso").val(etiqueta_egreso);
+		    $("#mod_secuencial_ingreso").val(secuencial_ingreso);
+		    $("#mod_etiqueta_ingreso").val(etiqueta_ingreso);
+		    $("#mod_subcentro_costo").val(subcentro_costo);
+		    $("#mod_centroCosto").val(centroCosto);
 		    $("#mod_id").val(id);
 
 		}
