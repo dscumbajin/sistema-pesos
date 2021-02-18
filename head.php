@@ -1205,7 +1205,7 @@
         box-shadow: none !important;
       }
 
-      /*
+    
       select{
         border:none!important;
         border-bottom:1px solid #c8c8c8!important;
@@ -1221,7 +1221,7 @@
         border:none!important;
         box-shadow:none!important;
         border-bottom:1px solid #c8c8c8!important;
-      } */
+      } 
       a:focus,
       i:focus {
         border: none !important;

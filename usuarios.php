@@ -74,6 +74,7 @@ $title = "Usuarios | Baterias Ecuador";
             $('#productos').removeClass('activarnav');
             $('#usuarios').addClass('activarnav');
             $('#centro_costo').removeClass('activarnav');
+            $('#centro_costo_producto').removeClass('activarnav');
         }
     </script>
     <script type="text/javascript" src="js/usuario/usuarios.js"></script>

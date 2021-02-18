@@ -76,6 +76,7 @@
 		$('#usuarios').removeClass('activarnav');
 		$('#centro_costo').addClass('activarnav');
         $('#productos').removeClass('activarnav');
+        $('#centro_costo_producto').removeClass('activarnav');
 	}
     </script>
     <script type="text/javascript" src="js/centro-costo/centro_costos.js"></script>

@@ -12,7 +12,7 @@
 	
 	$active_clientes="active";
 
-	$title="Productos | Baterias Ecuador";
+	$title="Centro de Costo -  Producto | Baterias Ecuador";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,23 +32,23 @@
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="btn-group pull-right">
-                    <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProducto"><span
-                            class="glyphicon glyphicon-plus"></span> Nuevo Producto</button>
+                    <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoCentroCostoProducto"><span
+                            class="glyphicon glyphicon-plus"></span> Nuevo Centro de Costo/Productos</button>
                 </div>
-                <h4><i class='glyphicon glyphicon-search'></i> Buscar Productos</h4>
+                <h4><i class='glyphicon glyphicon-search'></i> Buscar Centro de Costo/Producto</h4>
             </div>
             <div class="panel-body">
 
                 <?php
-				include("modal/producto/registro_productos.php");
-				include("modal/producto/editar_productos.php");
+				include("modal/centro-costo-producto/registro_centro_costo_producto.php");
+				include("modal/centro-costo-producto/editar_centro_costo_producto.php");
 			?>
                 <form class="form-horizontal" role="form" id="datos_cotizacion">
 
                     <div class="form-group row">
-                        <label for="q" class="col-md-2 control-label">Producto</label>
+                        <label for="q" class="col-md-2 control-label">Centro de Costo/Producto</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" id="q" placeholder="Código - Producto "
+                            <input type="text" class="form-control" id="q" placeholder="Centro de Costo "
                                 onkeyup='load(1);'>
                         </div>
                         <div class="col-md-3">
@@ -74,12 +74,12 @@
     <script>
     if($('#usuarios').hasClass('activarnav')){
 		$('#usuarios').removeClass('activarnav');
-		$('#productos').addClass('activarnav');
+		$('#centro_costo_producto').addClass('activarnav');
         $('#centro_costo').removeClass('activarnav');
-        $('#centro_costo_producto').removeClass('activarnav');
+        $('#productos').removeClass('activarnav');
 	}
     </script>
-    <script type="text/javascript" src="js/producto/productos.js"></script>
+    <script type="text/javascript" src="js/centro-costo-producto/centro_costos_producto.js"></script>
 </body>
 
 </html>
