@@ -16,6 +16,11 @@
     <link href="css/solid.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 
+    <!-- DataTables -->
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/buttons.bootstrap4.min.css">
+
     <style>
       * {
         font-family: 'Roboto', sans-serif;
@@ -1205,23 +1210,28 @@
         box-shadow: none !important;
       }
 
-    
-      select{
-        border:none!important;
-        border-bottom:1px solid #c8c8c8!important;
-        box-shadow:none!important;
-        outline:none!important;
+
+      select {
+        border: none !important;
+        border-bottom: 1px solid #c8c8c8 !important;
+        box-shadow: none !important;
+        outline: none !important;
       }
-      select:focus{
-        border:none!important;
-        box-shadow:none!important;
-        border-bottom:1px solid #c8c8c8!important;
+
+      select:focus {
+        border: none !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid #c8c8c8 !important;
       }
-      input:focus,select:focus,button:focus{
-        border:none!important;
-        box-shadow:none!important;
-        border-bottom:1px solid #c8c8c8!important;
-      } 
+
+      input:focus,
+      select:focus,
+      button:focus {
+        border: none !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid #c8c8c8 !important;
+      }
+
       a:focus,
       i:focus {
         border: none !important;

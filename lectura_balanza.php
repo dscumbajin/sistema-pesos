@@ -48,7 +48,7 @@ $title = "Lectura Balanza | Baterias Ecuador";
 
                     <div class="col-md-3">
                         <button id="limpiar" type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-search"></span> Limpiar</button>
+                            <span style="color: red;" class="glyphicon glyphicon-trash"></span> Limpiar</button>
                     </div>
 
                 </div>

@@ -20,66 +20,69 @@ if (isset($hasta) == false) {
 
 // Ejecutamos la consulta de busqueda
 ?>
-
-<table id="registros" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-
-            <th>id_usuario</th>
-            <th>id_producto</th>
-            <th>peso</th>
-            <th>comprobante</th>
-            <th>observacion</th>
-            <th>lote</th>
-            <th>tipo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        try {
-            $sql = "SELECT * FROM lecturasbalanza WHERE fecha BETWEEN '$desde' AND '$hasta' ";
-            $resultado = $con->query($sql);
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-            echo $error;
-        }
-        while ($balanza = $resultado->fetch_assoc()) { ?>
+<div class="table-responsive">
+    <table id="registros" class="table table-bordered table-striped">
+        <thead>
             <tr>
 
-                <td ><?php echo $balanza['id_usuario']; ?></td>
-                <td ><?php echo $balanza['id_producto']; ?></td>
-                <td ><?php echo $balanza['peso']; ?></td>
-                <td ><?php echo $balanza['comprobante']; ?></td>
-                <td ><?php echo $balanza['observacion']; ?></td>
-                <td ><?php echo $balanza['lote']; ?></td>
-                <td ><?php echo $balanza['tipo']; ?></td>
-              
-                
+                <th>id_usuario</th>
+                <th>id_producto</th>
+                <th>peso</th>
+                <th>comprobante</th>
+                <th>observacion</th>
+                <th>lote</th>
+                <th>tipo</th>
             </tr>
-        <?php } ?>
-    </tbody>
+        </thead>
+        <tbody>
+            <?php
+            try {
+                $sql = "SELECT * FROM lecturasbalanza WHERE fecha BETWEEN '$desde' AND '$hasta' ";
+                $resultado = $con->query($sql);
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+                echo $error;
+            }
+            while ($balanza = $resultado->fetch_assoc()) { ?>
+                <tr>
 
-</table>
+                    <td><?php echo $balanza['id_usuario']; ?></td>
+                    <td><?php echo $balanza['id_producto']; ?></td>
+                    <td><?php echo $balanza['peso']; ?></td>
+                    <td><?php echo $balanza['comprobante']; ?></td>
+                    <td><?php echo $balanza['observacion']; ?></td>
+                    <td><?php echo $balanza['lote']; ?></td>
+                    <td><?php echo $balanza['tipo']; ?></td>
 
+                </tr>
+            <?php } ?>
+        </tbody>
+
+    </table>
+</div>
 <script>
-       $("#registros").DataTable({
-        "responsive": true,
-        "autoWidth": false,
-        "pageLength": 10,
-        "language": {
-            paginate: {
-                next: 'Siguiente',
-                previous: 'Anterior',
-                last: 'Último',
-                firts: 'Primero'
-            },
-            info: 'Mostrando _START_ a _END_ de _TOTAL_ resultados',
-            emptyTable: 'No hay registros',
-            infoEmpty: 'Mostrando 0 to 0 of 0 Entradas',
-            search: 'Buscar: ',
-            lengthMenu: "Mostrar _MENU_ Entradas ",
-            infoFiltered: " (Filtrado de un total de _MAX_  entradas)"
-        }
-    });
+    $(function() {
 
+
+        $("#registros").DataTable({
+            "responsive": true,
+            "autoWidth": true,
+            "pageLength": 10,
+            "language": {
+                paginate: {
+                    next: 'Siguiente',
+                    previous: 'Anterior',
+                    last: 'Último',
+                    firts: 'Primero'
+                },
+                info: 'Mostrando _START_ a _END_ de _TOTAL_ resultados',
+                emptyTable: 'No hay registros',
+                infoEmpty: 'Mostrando 0 to 0 of 0 Entradas',
+                search: 'Buscar: ',
+                lengthMenu: "Mostrar _MENU_ Entradas ",
+                infoFiltered: " (Filtrado de un total de _MAX_  entradas)"
+            },
+            "buttons": ["excel"]
+        }).buttons().container().appendTo('#registros_wrapper .col-md-6:eq(0)');
+    });
 </script>
