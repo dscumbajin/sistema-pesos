@@ -7,9 +7,9 @@ require_once("../../config/conexion.php"); //Contiene funcion que conecta a la b
 
 $action = (isset($_REQUEST['action']) && $_REQUEST['action'] != NULL) ? $_REQUEST['action'] : '';
 if (isset($_GET['id'])) {
-	$id_centroCosto = $_GET['id'];
+	$id_centroCostoProducto = $_GET['id'];
 
-	if ($delete1 = mysqli_query($con, "DELETE FROM centrocostos WHERE id_centroCosto='" . $id_centroCosto . "'")) {
+	if ($delete1 = mysqli_query($con, "DELETE FROM centrocostosproducto WHERE id_centroCostoProducto='" . $id_centroCostoProducto . "'")) {
 ?>
 		<div class="alert alert-success alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

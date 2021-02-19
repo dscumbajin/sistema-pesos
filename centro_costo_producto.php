@@ -72,11 +72,11 @@
 	include("footer.php");
 	?>
     <script>
-    if($('#usuarios').hasClass('activarnav')){
-		$('#usuarios').removeClass('activarnav');
+    if($('#productos').hasClass('activarnav')){
+		$('#productos').removeClass('activarnav');
 		$('#centro_costo_producto').addClass('activarnav');
         $('#centro_costo').removeClass('activarnav');
-        $('#productos').removeClass('activarnav');
+        $('#usuarios').removeClass('activarnav');
 	}
     </script>
     <script type="text/javascript" src="js/centro-costo-producto/centro_costos_producto.js"></script>

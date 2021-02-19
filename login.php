@@ -22,7 +22,7 @@ $login = new Login();
 if ($login->isUserLoggedIn() == true) {
 	// the user is logged in. you can do whatever you want here.
 	// for demonstration purposes, we simply show the "you are logged in" view.
-	header("location: usuarios.php");
+	header("location: productos.php");
 } else {
 	// the user is not logged in. you can do whatever you want here.
 	// for demonstration purposes, we simply show the "you are not logged in" view.
@@ -138,7 +138,7 @@ if ($login->isUserLoggedIn() == true) {
 			}
 
 			.acciones button {
-				flex: 0 1 46% !important;
+				/* flex: 0 1 46% !important; */
 				cursor: pointer;
 				padding: 10px 20px !important;
 				width: 100%;
@@ -217,9 +217,8 @@ if ($login->isUserLoggedIn() == true) {
 						<input class="form-control" placeholder="Usuario" name="user_name" id="user_name" type="text" value="" autofocus="" required>
 						<label for="user_password" style="margin-top:10px;">Contraseña</label>
 						<input class="form-control" placeholder="Contraseña" name="user_password" id="user_password" type="password" value="" autocomplete="off" required>
-						<div class="acciones">
+						<div class="acciones center">
 							<button type="submit" class="btn btn-lg btn-success  btn-signin" name="login" id="submit">Iniciar Sesión</button>
-							<button class="hide" type="button" onclick="reset_password()" class="btn btn-lg btn-success btn-signin" style="margin-left:10px;" name="login" id="submit">Recuperar Contraseña</button>
 						</div>
 					</form><!-- /form -->
 
@@ -229,13 +228,13 @@ if ($login->isUserLoggedIn() == true) {
 				<div class="container" style="padding:10px;">
 					<p class="navbar-footer pull-right" style="background:#f2f2f2; margin:auto; color:#666666">Copyright &copy <?php echo date('Y'); ?> - BATERIAS ECUADOR.
 						<a href="http://bateriasecuador.com/" target="_blank" style="color: #666666; font-weigh:bold;">DERECHOS RESERVADOS</a>
-						<div class="btn-group pull-left">
+					<div class="btn-group pull-left">
 
-							<a href="http://bateriasecuador.com/" target="_blank" style="color: #666666; font-weigh:bold;margin-right:10px;">www.bateriasecuador.com </a>
-							<a href="https://web.facebook.com/bateriasecuador/" target="_blank"><i style="color:#666666" class="fab fa-facebook x-3"></i></a> |
-							<a href="https://www.youtube.com/channel/UC_KkHecfX2JmOHLsFNkISTA" target="_blank"><i style="color:#666666" class="fab fa-youtube"></i></a> |
-							<a href="https://www.instagram.com/baterias_ecuador/" target="_blank"><i style="color:#666666" class="fab fa-instagram"></i></a>
-						</div>
+						<a href="http://bateriasecuador.com/" target="_blank" style="color: #666666; font-weigh:bold;margin-right:10px;">www.bateriasecuador.com </a>
+						<a href="https://web.facebook.com/bateriasecuador/" target="_blank"><i style="color:#666666" class="fab fa-facebook x-3"></i></a> |
+						<a href="https://www.youtube.com/channel/UC_KkHecfX2JmOHLsFNkISTA" target="_blank"><i style="color:#666666" class="fab fa-youtube"></i></a> |
+						<a href="https://www.instagram.com/baterias_ecuador/" target="_blank"><i style="color:#666666" class="fab fa-instagram"></i></a>
+					</div>
 					</p>
 				</div>
 			</div>

@@ -20,7 +20,7 @@
 
 		function eliminar(id) {
 		    var q = $("#q").val();
-		    if (confirm("Realmente deseas eliminar el centro de costo")) {
+		    if (confirm("Realmente deseas eliminar el producto del centro de costo")) {
 		        $.ajax({
 		            type: "GET",
 		            url: "./ajax/centro-costo-producto/buscar_centro_costos_producto.php",

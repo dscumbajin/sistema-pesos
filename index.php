@@ -1,3 +1,3 @@
 <?php
-    header("Location: usuarios.php");
+    header("Location: productos.php");
 ?>

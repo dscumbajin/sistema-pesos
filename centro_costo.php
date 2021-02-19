@@ -72,10 +72,10 @@
 	include("footer.php");
 	?>
     <script>
-    if($('#usuarios').hasClass('activarnav')){
-		$('#usuarios').removeClass('activarnav');
+    if($('#productos').hasClass('activarnav')){
+		$('#productos').removeClass('activarnav');
 		$('#centro_costo').addClass('activarnav');
-        $('#productos').removeClass('activarnav');
+        $('#usuarios').removeClass('activarnav');
         $('#centro_costo_producto').removeClass('activarnav');
 	}
     </script>
