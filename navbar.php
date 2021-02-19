@@ -28,6 +28,8 @@
 						<li><a href="productos.php"><span class=" activarnav productos activarbarra " id="productos">Productos</span> <span class="sr-only" style="display:none">(current)</span> </a></li>
 						<li><a href="centro_costo.php"><span class=" nuevo activarbarra " id="centro_costo">Centro Costo</span> </a></li>
 						<li><a href="centro_costo_producto.php"><span class=" nuevo activarbarra " id="centro_costo_producto">Centro Costo - Producto</span> </a></li>
+						<li><a href="lectura_balanza.php"><span class=" nuevo activarbarra " id="lectura_balanza">Lectura Balanza</span> </a></li>
+					
 						<?php if ($_SESSION['user_admin'] == '1') { ?>
 							<li><a href="usuarios.php"><span class="nuevo activarbarra" id="usuarios">Usuarios</span> </a></li>
 						<?php } ?>
