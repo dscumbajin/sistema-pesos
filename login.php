@@ -150,11 +150,6 @@ if ($login->isUserLoggedIn() == true) {
 			}
 		</style>
 
-		<script>
-			function reset_password() {
-				location.href = "reset_password.php";
-			}
-		</script>
 
 	</head>
 

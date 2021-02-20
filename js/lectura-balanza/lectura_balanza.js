@@ -1,4 +1,7 @@
 $(function() {
+
+    $('#fecha_fin').attr("disabled", true);
+
     $('#fecha_inicio').on('change', function() {
         var desde = $('#fecha_inicio').val();
         var hasta = $('#fecha_fin').val();
@@ -14,6 +17,7 @@ $(function() {
             success: function(datos) {
                 $('#tabla_resultados').html('');
                 $('#tabla_resultados').html(datos);
+                $('#fecha_fin').attr("disabled", false);
                 $('#loader').html('');
             }
         });
@@ -24,7 +28,6 @@ $(function() {
         var desde = $('#fecha_inicio').val();
         var hasta = $('#fecha_fin').val();
         var url = './ajax/lectura-balanza/buscar_lectura.php';
-
         $.ajax({
             tyoe: 'POST',
             url: url,
@@ -46,7 +49,7 @@ $(function() {
         $('#fecha_fin').val('');
         $('#fecha_inicio').val('');
         $('#tabla_resultados').html('');
-        //  $('#tabla_resultados').hide();
+        $('#fecha_fin').attr("disabled", true);
     });
 
 });
