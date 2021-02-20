@@ -24,7 +24,6 @@ if (isset($hasta) == false) {
     <table id="registros" class="table table-bordered table-striped">
         <thead>
             <tr>
-
                 <th>id_usuario</th>
                 <th>id_producto</th>
                 <th>peso</th>
