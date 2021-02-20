@@ -32,7 +32,7 @@ $title = "Lectura Balanza | Baterias Ecuador";
         <div class="panel panel-info">
             <div class="panel-heading">
 
-                <h4><i class='glyphicon glyphicon-search'></i> Buscar Lecturas</h4>
+                <h4><i class='glyphicon glyphicon-search'></i> Buscar Lecturas Balanza</h4>
             </div>
             <div class="panel-body">
 
@@ -45,8 +45,11 @@ $title = "Lectura Balanza | Baterias Ecuador";
                     <div class="col-md-3">
                         <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" placeholder="Fecha fin">
                     </div>
-
                     <div class="col-md-3">
+                        <span id="loader"></span>
+                    </div>
+                    <div class="col-md-3">
+
                         <button id="limpiar" type="button" class="btn btn-default">
                             <span style="color: red;" class="glyphicon glyphicon-trash"></span> Limpiar</button>
                     </div>

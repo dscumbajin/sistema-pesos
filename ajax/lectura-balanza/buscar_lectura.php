@@ -24,19 +24,22 @@ if (isset($hasta) == false) {
     <table id="registros" class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>id_usuario</th>
-                <th>id_producto</th>
-                <th>peso</th>
-                <th>comprobante</th>
-                <th>observacion</th>
-                <th>lote</th>
-                <th>tipo</th>
+                <th>Usuario</th>
+                <th>Código producto</th>
+                <th>Producto</th>
+                <th>Peso</th>
+                <th>Comprobante</th>
+                <th>Lote</th>
+                <th>Tipo</th>
+                <th>Obs</th>
             </tr>
         </thead>
         <tbody>
             <?php
             try {
-                $sql = "SELECT * FROM lecturasbalanza WHERE fecha BETWEEN '$desde' AND '$hasta' ";
+                $sql = " SELECT usuario, codigo_producto, producto, peso, comprobante, observacion, lote, tipo ";
+                $sql .= " FROM lecturasbalanza, productos, usuarios ";
+                $sql .= " WHERE lecturasbalanza.id_producto = productos.id_producto AND lecturasbalanza.id_usuario = usuarios.id_usuario AND fecha BETWEEN '$desde' AND '$hasta' ";
                 $resultado = $con->query($sql);
             } catch (Exception $e) {
                 $error = $e->getMessage();
@@ -45,13 +48,14 @@ if (isset($hasta) == false) {
             while ($balanza = $resultado->fetch_assoc()) { ?>
                 <tr>
 
-                    <td><?php echo $balanza['id_usuario']; ?></td>
-                    <td><?php echo $balanza['id_producto']; ?></td>
+                    <td><?php echo $balanza['usuario']; ?></td>
+                    <td><?php echo $balanza['codigo_producto']; ?></td>
+                    <td><?php echo $balanza['producto']; ?></td>
                     <td><?php echo $balanza['peso']; ?></td>
                     <td><?php echo $balanza['comprobante']; ?></td>
-                    <td><?php echo $balanza['observacion']; ?></td>
                     <td><?php echo $balanza['lote']; ?></td>
                     <td><?php echo $balanza['tipo']; ?></td>
+                    <td><?php echo $balanza['observacion']; ?></td>
 
                 </tr>
             <?php } ?>

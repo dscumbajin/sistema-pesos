@@ -137,9 +137,10 @@ http://work.smarchal.com/twbscolor/
     white-space: nowrap;
     margin: auto;
     width: 100px;
-    margin: 0 auto; 
+    margin: 0 auto;
     text-align: justify
 }
+
 .ellipsis:hover {
     text-overflow: initial;
     white-space: initial;
@@ -148,12 +149,13 @@ http://work.smarchal.com/twbscolor/
 }
 
 .reducir150 {
-    position:relative !important;
-    width:120px !important; 
-    overflow:auto !important
+    position: relative !important;
+    width: 120px !important;
+    overflow: auto !important
 }
-.reducir200{
-    position:relative !important;
-    width:200px !important; 
-    overflow:auto !important
+
+.reducir200 {
+    position: relative !important;
+    width: 200px !important;
+    overflow: auto !important
 }

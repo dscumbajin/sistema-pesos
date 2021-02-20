@@ -4,16 +4,17 @@ $(function() {
         var hasta = $('#fecha_fin').val();
         var url = './ajax/lectura-balanza/buscar_lectura.php';
 
-        console.log(desde);
-        console.log(hasta);
-
         $.ajax({
             tyoe: 'POST',
             url: url,
             data: 'desde=' + desde + '&hasta=' + hasta,
+            beforeSend: function(objeto) {
+                $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
+            },
             success: function(datos) {
                 $('#tabla_resultados').html('');
-                $('#agrega-registros').html(datos);
+                $('#tabla_resultados').html(datos);
+                $('#loader').html('');
             }
         });
         // $('#tabla_resultados').show();
@@ -24,17 +25,18 @@ $(function() {
         var hasta = $('#fecha_fin').val();
         var url = './ajax/lectura-balanza/buscar_lectura.php';
 
-        console.log(desde);
-        console.log(hasta);
-
         $.ajax({
             tyoe: 'POST',
             url: url,
             data: 'desde=' + desde + '&hasta=' + hasta,
+            beforeSend: function(objeto) {
+                $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
+            },
             success: function(datos) {
 
                 $('#tabla_resultados').html('');
                 $('#tabla_resultados').html(datos);
+                $('#loader').html('');
             }
         });
         // $('#tabla_resultados').show();
