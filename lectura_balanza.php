@@ -69,12 +69,14 @@ $title = "Lectura Balanza | Baterias Ecuador";
     include("footer.php");
     ?>
     <script>
-        if ($('#productos').hasClass('activarnav')) {
+        if ($('#home').hasClass('activarnav')) {
+            $('#home').removeClass('activarnav');
             $('#productos').removeClass('activarnav');
             $('#centro_costo_producto').removeClass('activarnav');
             $('#centro_costo').removeClass('activarnav');
             $('#usuarios').removeClass('activarnav');
             $('#lectura_balanza').addClass('activarnav');
+            
         }
     </script>
     <script type="text/javascript" src="js/lectura-balanza/lectura_balanza.js"></script>
