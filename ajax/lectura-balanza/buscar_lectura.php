@@ -96,7 +96,7 @@ if (isset($hasta) == false) {
                 lengthMenu: "Mostrar _MENU_ Entradas ",
                 infoFiltered: " (Filtrado de un total de _MAX_  entradas)"
             },
-            "buttons": ["excel"]
+            "buttons": [{ extend: 'excel', className: 'btn-success' }]
         }).buttons().container().appendTo('#registros_wrapper .col-md-6:eq(0)');
     });
 </script>
