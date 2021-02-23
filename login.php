@@ -213,7 +213,7 @@ if ($login->isUserLoggedIn() == true) {
 						<label for="user_password" style="margin-top:10px;">Contraseña</label>
 						<input class="form-control" placeholder="Contraseña" name="user_password" id="user_password" type="password" value="" autocomplete="off" required>
 						<div class="acciones center">
-							<button type="submit" class="btn btn-lg btn-success  btn-signin" name="login" id="submit">Iniciar Sesión</button>
+							<button type="submit" class="btn btn-lg btn-success  btn-signin" name="login" >Iniciar Sesión</button>
 						</div>
 					</form><!-- /form -->
 

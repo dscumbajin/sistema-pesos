@@ -82,6 +82,18 @@
 	}
     </script>
     <script type="text/javascript" src="js/centro-costo/centro_costos.js"></script>
+      <!-- destruccion  -->
+      <script>
+        window.onload = function() {
+            killerSession();
+        }
+
+        function killerSession() {
+            setTimeout("window.open('login.php?logout','_top');", 60000);
+        }
+    </script>
+    <!-- destruccion  -->
+
 </body>
 
 </html>

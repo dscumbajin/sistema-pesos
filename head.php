@@ -1479,10 +1479,3 @@
         text-align: center;
       }
     </style>
-
-    <script>
-      function activarfacturacion() {
-        $('#usuarios').removeClass('activarnav');
-        $('#productos').removeClass('activarnav');
-      }
-    </script>

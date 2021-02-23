@@ -29,26 +29,37 @@ $title = "Home | Baterias Ecuador";
     ?>
 
     <div class="container" style="text-align:center;">
-        
-            <h1>SISTEMA CONTROL DE PESOS</h1> 
-            <img src="img/balanza.png"  alt="balanza" style="width: 300px;" />
-            
-            <h2>Administración de información</h2>
+
+        <h1>SISTEMA CONTROL DE PESOS</h1>
+        <img src="img/balanza.png" alt="balanza" style="width: 300px;" />
+
+        <h2>Administración de información</h2>
     </div>
     <hr>
     <?php
     include("footer.php");
     ?>
     <script>
-          if($('#productos').hasClass('activarnav')){
-		$('#productos').removeClass('activarnav');
-		$('#home').addClass('activarnav');
-        $('#centro_costo_producto').removeClass('activarnav');
-        $('#centro_costo').removeClass('activarnav');
-        $('#usuarios').removeClass('activarnav');
-        $('#home').removeClass('activarnav');
-	}
+        if ($('#productos').hasClass('activarnav')) {
+            $('#productos').removeClass('activarnav');
+            $('#home').addClass('activarnav');
+            $('#centro_costo_producto').removeClass('activarnav');
+            $('#centro_costo').removeClass('activarnav');
+            $('#usuarios').removeClass('activarnav');
+            $('#home').removeClass('activarnav');
+        }
     </script>
+    <!-- destruccion  -->
+    <script>
+        window.onload = function() {
+            killerSession();
+        }
+
+        function killerSession() {
+            setTimeout("window.open('login.php?logout','_top');", 60000);
+        }
+    </script>
+    <!-- destruccion  -->
 
 </body>
 
