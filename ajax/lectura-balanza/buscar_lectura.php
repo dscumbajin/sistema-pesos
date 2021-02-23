@@ -44,7 +44,7 @@ if (isset($hasta) == false) {
                 $sql .= " WHERE lecturasbalanza.id_producto = productos.id_producto ";
                 $sql .= " AND lecturasbalanza.id_usuario = usuarios.id_usuario ";
                 $sql .= " AND usuarios.id_centroCosto = centrocostos.id_centroCosto ";
-                $sql .= " AND fecha BETWEEN '$desde' AND '$hasta' ";
+                $sql .= " AND fecha BETWEEN '2021-02-01 00:00:01' AND '2021-02-01 00:59:00' ";
                 $resultado = $con->query($sql);
             } catch (Exception $e) {
                 $error = $e->getMessage();

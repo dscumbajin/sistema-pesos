@@ -68,6 +68,7 @@ if ($action == 'ajax') {
 				<tr class="info">
 
 					<th>Usuario</th>
+					<th>Password</th>
 					<th>Centro de costos</th>
 					<th>Subcentro</th>
 					<th>Admin</th>
@@ -107,6 +108,7 @@ if ($action == 'ajax') {
 
 					<tr>
 						<td><?php echo $usuario_usuario; ?></td>
+						<td><?php echo $password_usuario; ?></td>
 						<td><?php echo $centro_usuario; ?></td>
 						<td><?php echo $subcentro_usuario; ?></td>
 						<td><?php echo $perfil; ?></td>
