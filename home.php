@@ -12,7 +12,7 @@ require_once("config/conexion.php"); //Contiene funcion que conecta a la base de
 
 $active_clientes = "active";
 
-$title = "Home | Baterias Ecuador";
+$title = "Sistema Pesos | Baterias Ecuador";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,17 +49,7 @@ $title = "Home | Baterias Ecuador";
             $('#home').removeClass('activarnav');
         }
     </script>
-    <!-- destruccion  -->
-    <script>
-        window.onload = function() {
-            killerSession();
-        }
 
-        function killerSession() {
-            setTimeout("window.open('login.php?logout','_top');", 60000);
-        }
-    </script>
-    <!-- destruccion  -->
 
 </body>
 

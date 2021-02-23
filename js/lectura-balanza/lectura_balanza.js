@@ -4,13 +4,17 @@ $(function() {
 
     $('#fecha_inicio').on('change', function() {
         var desde = $('#fecha_inicio').val();
+        var conDesde = desde + ' 00:00:01';
         var hasta = $('#fecha_fin').val();
+        var conHasta = hasta + ' 23:59:59';
+        console.log(conDesde);
+        console.log(conHasta);
         var url = './ajax/lectura-balanza/buscar_lectura.php';
 
         $.ajax({
             tyoe: 'POST',
             url: url,
-            data: 'desde=' + desde + '&hasta=' + hasta,
+            data: 'desde=' + conDesde + '&hasta=' + conHasta,
             beforeSend: function(objeto) {
                 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
             },
@@ -26,12 +30,16 @@ $(function() {
 
     $('#fecha_fin').on('change', function() {
         var desde = $('#fecha_inicio').val();
+        var conDesde = desde + ' 00:00:01';
         var hasta = $('#fecha_fin').val();
+        var conHasta = hasta + ' 23:59:59';
+        console.log(conDesde);
+        console.log(conHasta);
         var url = './ajax/lectura-balanza/buscar_lectura.php';
         $.ajax({
             tyoe: 'POST',
             url: url,
-            data: 'desde=' + desde + '&hasta=' + hasta,
+            data: 'desde=' + conDesde + '&hasta=' + conHasta,
             beforeSend: function(objeto) {
                 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
             },

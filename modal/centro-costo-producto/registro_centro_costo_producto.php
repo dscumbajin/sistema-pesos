@@ -66,9 +66,3 @@
 	<?php
 	}
 	?>
-	<!-- Select2 -->
-	<script src="js/select2.full.min.js"></script>
-	<script>
-		//Initialize Select2 Elements
-		$('.sel').select2();
-	</script>

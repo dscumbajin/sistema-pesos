@@ -61,11 +61,7 @@ if (isset($hasta) == false) {
                     <td><?php echo $balanza['comprobante']; ?></td>
                     <td><?php echo $balanza['lote']; ?></td>
                     <td><?php echo $balanza['tipo']; ?></td>
-                    <td><?php
-                        $fecha =  $balanza['fecha'];
-                        $date = new DateTime($fecha);
-                        echo $date->format('d-m-Y');
-                        ?></td>
+                    <td><?php echo $balanza['fecha']; ?></td>
                     <td><?php echo $balanza['observacion']; ?></td>
 
                 </tr>
@@ -96,7 +92,10 @@ if (isset($hasta) == false) {
                 lengthMenu: "Mostrar _MENU_ Entradas ",
                 infoFiltered: " (Filtrado de un total de _MAX_  entradas)"
             },
-            "buttons": [{ extend: 'excel', className: 'btn-success' }]
+            "buttons": [{
+                extend: 'excel',
+                className: 'btn-success'
+            }]
         }).buttons().container().appendTo('#registros_wrapper .col-md-6:eq(0)');
     });
 </script>
