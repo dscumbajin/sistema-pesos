@@ -84,10 +84,10 @@ class Login
                     if ($_POST['user_password'] == $result_row->password){
 
                         // write user data into PHP SESSION (a file on your server)
-                        $_SESSION['user_id'] = $result_row->id_usuario;
-                        $_SESSION['user_usuario'] = $result_row->usuario;
-                        $_SESSION['user_admin'] = $result_row->admin;
-                        $_SESSION['user_login_status'] = 1;
+                        $_SESSION['user_id2'] = $result_row->id_usuario;
+                        $_SESSION['user_usuario2'] = $result_row->usuario;
+                        $_SESSION['user_admin2'] = $result_row->admin;
+                        $_SESSION['user_login_status2'] = 1;
                     } else {
                         $this->errors[] = "Contraseña no coincide.";
                     }
@@ -118,7 +118,7 @@ class Login
      */
     public function isUserLoggedIn()
     {
-        if (isset($_SESSION['user_login_status']) and $_SESSION['user_login_status'] == 1) {
+        if (isset($_SESSION['user_login_status2']) and $_SESSION['user_login_status2'] == 1) {
             return true;
         }
         // default return

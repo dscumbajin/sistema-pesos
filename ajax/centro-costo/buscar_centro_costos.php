@@ -113,7 +113,7 @@ if ($action == 'ajax') {
 						<td><?php echo $activo_cc; ?></td>
 						<td><span>
 								<a href="#" title='Editar Centro Costo' onclick="obtener_datos('<?php echo $id_centroCosto; ?>');" data-toggle="modal" data-target="#modCentroCosto"><i class="glyphicon glyphicon-edit"></i></a>
-								<?php if ($_SESSION['user_admin'] == '1') { ?>
+								<?php if ($_SESSION['user_admin2'] == '1') { ?>
 									<a href="#" title='Borrar Centro Costo' onclick="eliminar('<?php echo $id_centroCosto; ?>')"><i class="glyphicon glyphicon-trash" style="color: red;"></i> </a>
 								<?php } ?>
 							</span>

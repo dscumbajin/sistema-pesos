@@ -30,12 +30,12 @@
 						<li><a href="centro_costo_producto.php"><span class=" nuevo activarbarra " id="centro_costo_producto">Centro Costo - Producto</span> </a></li>
 						<li><a href="lectura_balanza.php"><span class=" nuevo activarbarra " id="lectura_balanza">Lectura Balanza</span> </a></li>
 
-						<?php if ($_SESSION['user_admin'] == '1') { ?>
+						<?php if ($_SESSION['user_admin2'] == '1') { ?>
 							<li><a href="usuarios.php"><span class="nuevo activarbarra" id="usuarios">Usuarios</span> </a></li>
 						<?php } ?>
 
 						<li class="desaparecer"><a class="linea"><span>|</span></a></li>
-						<li><a href="#"><?php echo $_SESSION['user_usuario']; ?> <i style="margin-left:5px;" class="glyphicon glyphicon-user"></i></a></li>
+						<li><a href="#"><?php echo $_SESSION['user_usuario2']; ?> <i style="margin-left:5px;" class="glyphicon glyphicon-user"></i></a></li>
 						<li><a href="login.php?logout"><i style="color: red;" class='glyphicon glyphicon-log-out'></i> Salir</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->

@@ -123,7 +123,7 @@ if ($action == 'ajax') {
 						<td><?php echo $tiempo_producto; ?></td>
 						<td><span>
 								<a href="#" title='Editar producto' onclick="obtener_datos('<?php echo $id_producto; ?>');" data-toggle="modal" data-target="#modProducto"><i class="glyphicon glyphicon-edit"></i></a>
-								<?php if ($_SESSION['user_admin'] == '1') { ?>
+								<?php if ($_SESSION['user_admin2'] == '1') { ?>
 								<a href="#" title='Borrar producto' onclick="eliminar('<?php echo $id_producto; ?>')"><i class="glyphicon glyphicon-trash" style="color: red;"></i> </a>
 								<?php } ?>
 							</span>
